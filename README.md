@@ -18,9 +18,9 @@
 
 ## 安装
 
-1. 从 GitHub Releases 下载 `Jiezhi-v1.0.1.dmg`。
+1. 从 GitHub Releases 下载 `Jiezhi-v1.0.2.dmg`。
 2. 打开 DMG，将“止界”拖入 Applications 文件夹。
-3. v1.0.1 使用 ad-hoc 签名且**未经过 Apple notarization（公证）**。首次启动请在 Finder 中右键“止界”，选择“打开”，再在系统提示中确认。
+3. v1.0.2 使用 ad-hoc 签名且**未经过 Apple notarization（公证）**。首次启动请在 Finder 中右键“止界”，选择“打开”，再在系统提示中确认。
 
 ## 使用
 
@@ -51,7 +51,7 @@ open Jiezhi.xcodeproj
 默认使用 `/Applications/Xcode-beta.app/Contents/Developer`。可通过环境变量覆盖：
 
 ```bash
-DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer VERSION=1.0.1 ./scripts/build-release.sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer VERSION=1.0.2 ./scripts/build-release.sh
 ```
 
 产物位于 `dist/`，包括 DMG 和 SHA-256 校验文件。
