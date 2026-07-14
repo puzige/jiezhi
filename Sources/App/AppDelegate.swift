@@ -3,7 +3,7 @@ import Combine
 
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
-    private static let statusIconPointSize: CGFloat = 17
+    private static let statusIconPointSize: CGFloat = 16
 
     private let model = JiezhiModel()
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
