@@ -3,6 +3,8 @@ import Combine
 
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
+    private static let statusIconPointSize: CGFloat = 17
+
     private let model = JiezhiModel()
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     private var windowController: JiezhiWindowController?
@@ -70,10 +72,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     private func updateStatusIcon() {
         let description = model.allowsPointerAcrossDevices ? "允许指针跨设备" : "指针不跨设备"
-        let image = NSImage(
+        let baseImage = NSImage(
             systemSymbolName: "arrow.left.and.right.circle.fill",
             accessibilityDescription: description
         )
+        let configuration = NSImage.SymbolConfiguration(
+            pointSize: Self.statusIconPointSize,
+            weight: .regular
+        )
+        let image = baseImage?.withSymbolConfiguration(configuration) ?? baseImage
         image?.isTemplate = true
         statusItem.button?.image = image
         statusItem.button?.appearsDisabled = model.isWorking || !model.allowsPointerAcrossDevices
